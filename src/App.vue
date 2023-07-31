@@ -1,26 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id="app">
+<!--    <router-view></router-view>-->
+      <router-view :key="$route.fullPath"></router-view>
+  </div>
 </template>
 
+ 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+// 自己引入的组件  由路由管理的组件成为路由组件,通常放在pages文件夹下面
+// 和普通的组件分开 而且不需要引入和注册
+// import BannerComponents from "./components/BannerComponents";
+// import AboutComponents from "./components/AboutComponents";
 export default {
-  name: 'App',
-  components: {
-    HelloWorld
-  }
-}
+  name: "App",
+  // 注册组件
+  // components: { BannerComponents, AboutComponents},
+};
 </script>
-
+ 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
 </style>
